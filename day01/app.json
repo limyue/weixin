@@ -1,0 +1,33 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/firstPage/first",
+    "pages/secondPage/second",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "微信",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar" : {
+    "color" : "#c0c0c0",
+    "selectedColor" : "#fff",
+    "backgroundColor" : "#333",
+    "borderStyle" : "white",
+    "position" : "bottom",
+    "list" : [
+      {
+        "pagePath" : "pages/index/index",
+        "text" : "首页"
+      },{
+        "pagePath" : "pages/firstPage/first",
+        "text" : "个人主页"
+      }
+    ]
+  },
+  "debug" : "true"
+
+}

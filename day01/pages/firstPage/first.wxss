@@ -1,0 +1,4 @@
+/* pages/firstPage/first.wxss */
+.active{
+	color:red;
+}

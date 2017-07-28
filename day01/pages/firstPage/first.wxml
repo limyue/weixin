@@ -1,0 +1,102 @@
+
+<!-- 事件  bindtap冒泡  catchtap非冒泡-->
+<!-- 冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。 -->
+<view id="outter" bindtap="Tap1">
+  冒泡事件 outer view
+  <view id="middle" bindtap="Tap2">
+    冒泡事件 middle view
+    <view id="inner" bindtap="Tap3">
+      冒泡事件 inner view
+    </view>
+  </view>
+</view>
+<!-- 非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。 -->
+<view id="outter" catchtap="Tap1">
+ 非冒泡事件 outer view
+  <view id="middle" catchtap="Tap2">
+   非冒泡事件 middle view
+    <view id="inner" catchtap="Tap3">
+     非冒泡事件 inner view
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 定义一个模板   -->
+<template name="object">
+  <view>{{a}}</view>
+  <view>{{b}}</view>
+  <view>{{name}}</view>
+</template>
+<!-- 使用模板 -->
+<template is="object" data="{{a:'a=10',b:'b=20'}}"></template>
+<template is="object" data="{{...obj1,name:name}}"></template>
+<template is="object" data="{{...obj1,name}}"></template>
+
+
+
+<!-- 列表渲染 -->
+<view wx:for="{{arr}}">李明说：{{item.message}}</view>
+<view wx:for="{{[id,3,2,1]}}">下标：{{index}},数组内容：{{item}}</view>
+<view wx:for="{{[id,3,2,1]}}" wx:for-index="i" wx:for-item="it">下标：{{i}},数组内容：{{it}}</view>
+
+<!-- 9*9乘法表 -->
+<view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
+  <view style="display:inline-block;width:50px;" wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="j">
+    <view wx:if="{{j<=i}}">
+      {{i}}*{{j}}={{i*j}}
+    </view>
+  </view>
+</view>
+
+
+<!-- 三元运算 -->
+<view>{{2>1?'正':'反'}}</view>
+
+
+<!-- 显示隐藏 -->
+<view wx:if="{{true}}">{{text}}</view>  
+<view wx:if="{{false}}">{{text}}</view>   
+<view wx:if="{{show}}">{{text}}</view> 
+
+
+<!-- 点击按钮显示隐藏转换 -->
+<button bindtap="change">显示/隐藏</button>
+<view wx:if="{{bool}}">{{show}}</view>
+
+<block wx:if="{{true}}">
+  <view>1</view>
+  <view>2</view>
+</block>
+
+
+<!-- 判断 条件渲染-->
+<view wx:if="{{id<2}}">不及格</view> 
+<view wx:elif="{{id<4}}">优秀</view> 
+<view wx:else="{{id>7}}">神人</view> 
+
+
+<!-- 显示隐藏 2-->
+<text hidden="{{true}}">hidden的显示隐藏，只作用在text文本类型生效</text>
+
+
+<!-- id -->
+<view id="item-{{id}}">id</view>
+
+
+<!-- 点击按钮改变内容 -->
+<button bindtap="btnClick">点击按钮改变内容</button>
+<text>{{text}}</text> 
+
+
+<!-- 点击按钮转换页面 1-->
+<button bindtap="toIndex">点击按钮到测试页面</button>
+<button bindtap="toIndex2">关闭当前页面跳转到测试页面不建议使用</button>
+
+
+<!-- 点击按钮转换页面 2-->
+<navigator hover-class="active" url="../secondPage/second">跳转到新页面</navigator>
+<view>密码：{{pass}}</view>  
+
+
