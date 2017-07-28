@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/user/user",
+    "pages/play/play",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "微信",
+    "navigationBarTextStyle":"write"
+  },
+  "tabBar":{
+    "backgroundColor":"#000",
+    "color":"#c1c1c1",
+    "selectedColor":"#fff",
+    "borderStyle":"write",
+    "list":[{
+        "pagePath":"pages/index/index",
+        "text":"消息"
+    },{
+        "pagePath":"pages/user/user",
+        "text":"联系人"
+    },{
+        "pagePath":"pages/play/play",
+        "text":"动态"
+    }],
+    "position":"bottom"
+  },
+  "debug":"true"
+}

@@ -1,0 +1,54 @@
+<text>play页面</text>
+
+
+<!-- 引用user页面某模板 -->
+<import src="../user/user.wxml"/>
+<template is="item" data="{{name:'limyue'}}"/>
+<!-- 引用除模板以外的内容 -->
+<!-- <view>include 的引用</view>
+<include src="../user/user.wxml"/> -->
+
+<!-- --------------承接user文件------------ -->
+
+<!-- 界面 ** 操作反馈 -->
+	<button bindtap="showAction" size="mini">显示操作菜单</button>
+	<button bindtap="showmodel" size="mini">显示模态弹窗</button>
+	<button bindtap="showToast" size="mini">消息提示框</button>
+
+
+<!-- 组件 ：导航-->
+	<navigator url="../logs/logs" hover-class="navigator-hover">跳转到日志页面</navigator>
+	<button bindtap="switchTab">跳转到logs页面</button>
+	<!-- 跳转index/user页面出错 可以跳转到不是导航的页面-->
+
+
+<!-- 组件 ：媒体组件-->
+	<!-- audio -->
+	<audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+
+	<button type="primary" size="mini" bindtap="audioPlay">播放</button>
+	<button type="primary" size="mini" bindtap="audioPause">暂停</button>
+	<button type="primary" size="mini" bindtap="audio14">设置当前播放时间为14秒</button>
+	<button type="primary" size="mini" bindtap="audioStart">回到开头</button>
+
+	<!-- image -->
+	<!-- <image src="{{}}"><images/> -->
+
+	<!-- video -->
+	<view class="section tc">
+	  <video id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+	  <view class="btn-area">
+	    <button bindtap="bindButtonTap" size="mini">获取视频</button>
+	    <input bindblur="bindInputBlur"/>
+	    <button bindtap="bindSendDanmu" size="mini">发送弹幕</button>
+	  </view>
+	</view>
+
+<!-- 组件 ：地图-->
+	<button bindtap="getLocation" size="mini">获取我的位置</button>
+	<button bindtap="openLocation" size="mini">查看我的位置</button>
+	<map id="map" longitude="114.51486" latitude="38.042307" markers="{{markers}}" style="width: 100%; height: 300px;"></map>
+<!-- 组件 ：画布-->
+	<!-- 未完成 -->
+	<text>canvas</text>
+	<canvas style="width: 100%; height: 100%;background-color: #c2c2c2" canvas-id="firstCanvas"></canvas>

@@ -1,0 +1,36 @@
+/*相对路径*/
+@import "../index/index.wxss";
+
+.box{
+	/*设置：弹性盒模型*/
+	display:-webkit-flex;
+	/*方向：纵向*/
+	/*flex-direction: column;*/
+	/*height:500px;*/
+}
+.box view{
+	width: 200rpx;
+	height: 200rpx;
+	color:#fff;
+	line-height: 200rpx;
+	text-align: center;
+}
+.a{
+	background-color: red;
+	flex: 5;
+}
+.b{
+	background-color: blue;
+	flex:2;
+}
+.c{
+	background-color: green;
+	flex:1;
+}
+image{
+	width: 100%;
+	height:400rpx;
+}
+.txtArea{
+	border:1px solid #ccc;
+}

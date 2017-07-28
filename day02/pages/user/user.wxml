@@ -1,0 +1,88 @@
+<text>user页面</text>
+
+<!-- 组件 ：视图容器-->
+		<!--view 弹性盒布局模型 -->
+		<view class="box">
+			<view class="a">a</view>
+			<view class="b">b</view>
+			<view class="c">c</view>
+		</view>
+		<!-- swiper 滑动-->
+		<swiper indicator-dots="true" indicator-color="rgba(0, 0, 0, 0.5)" indicator-active-color="red" autoplay="true" interval="2000" duration="600" circular="true" bindchange="changePage">
+			<swiper-item wx:for="{{imgUrl}}">
+	      		<image src="{{item}}"/>
+	   		 </swiper-item>
+		</swiper>
+
+
+<!-- 组件 ：基础内容-->
+		<!-- icon图标 -->
+		<view>
+			<block wx:for="{{iconType}}">
+				<icon type="{{item}}" size="40" color="blue"></icon>
+			</block>		
+		</view>
+		<!-- text -->
+		<view>我是view标签包围的文字，我不能被选中</view>
+		<text>我是text标签包围的文字，我可以被选中</text>
+		<!-- progress 进度条-->
+		<progress percent="70" show-info stroke-width="15" color="red" active/>
+		<progress percent="{{number}}" show-info stroke-width="15" color="red" active/>
+
+
+<!-- 组件 ：表单组件-->
+		<form bindsubmit="sub" bindreset="res">
+			<text>用户名</text>
+			<input type="text" name="user"/>
+			<text>密 码</text>
+			<input type="password" name="password"/>
+			<!-- 复选框 -->
+			<text>你喜欢的国家</text>
+			<checkbox-group>
+			 	<label wx:for="{{item2}}">
+					<checkbox value="{{item.name}}"/>{{item.value}}
+				</label>
+			</checkbox-group>
+			<!-- 单选框 -->
+			<text>您的职业</text>
+			<radio-group bindchange="radioChange">
+			  <label class="radio" wx:for="{{items}}">
+			    <radio value="{{item.name}}"/>{{item.value}}
+			  </label>
+			</radio-group>
+			<button size="mini" formType="submit">提交</button>
+			<button size="mini" type="warn" formType="reset">重置</button>
+			<!-- picker -->
+			<view>选择国家</view>
+			<picker bindchange="bpC" value="{{index}}" range="{{country}}">
+				<view>选择：{{country[index]}}</view>
+			</picker>
+			<view>选择时间</view>
+			<picker bindchange="bpC2" value="{{time}}" start="00:00" end="24:60" mode = "time">
+				<view>选择：{{time}}</view>
+			</picker>
+			<!-- 滑动选择器 -->
+			<slider show-value min="0" max="50" left-icon="cancel" right-icon="success_no_circle"/>
+			<!-- 开关选择器 -->
+			<switch checked type="switch"/>
+			<!-- 多行文本输入框 -->
+			<textarea class="txtArea" auto-height placeholder="请输入您的工作经验" placeholder-style="color:#c1c1c1;"  />
+		</form>	
+		
+
+<!-- ----------------见play文件-------------- -->
+				<!-- 组件 ：导航-->
+				<!-- 组件 ：媒体组件-->
+				<!-- 组件 ：地图-->
+				<!-- 组件 ：画布-->
+
+
+
+<!-- 被play页面 *引用 *某模板 -->
+<template name="item">
+	<text>我是user里边的{{name}}</text>
+</template>
+
+ <view class="wel">
+    <text>欢迎你</text>
+ </view>
